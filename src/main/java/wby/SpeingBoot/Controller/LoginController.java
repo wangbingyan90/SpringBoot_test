@@ -2,19 +2,12 @@ package wby.SpeingBoot.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-import wby.SpeingBoot.ResultInfo;
 import wby.SpeingBoot.bean.Admin;
 import wby.SpeingBoot.bean.dao.AdminDao;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-import java.util.List;
 
 /**
  * 登陆控制层
