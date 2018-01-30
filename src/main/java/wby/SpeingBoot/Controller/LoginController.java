@@ -22,12 +22,13 @@ public class LoginController {
 
 
     @RequestMapping(value = "/login/auth",method = RequestMethod.POST)
-    public String loginAuth(Admin user, HttpSession session){
+    public String loginAuth(Admin user, HttpSession session,ModelMap map){
         Admin use = dao.findByNameAndAndPassow(user.getName(),user.getPassow());
         if (use==null)
             return null;
         session.setAttribute("user",use);
         System.out.println("asdasda");
+        map.addAttribute("host", "http://blog.didispace.com");
         return "index";
     }
 

@@ -14,4 +14,11 @@ public class Admin {
     String name;
     @Column(nullable = false)
     String passow;
+
+    public Admin(String name, String password) {
+        this.name = name;
+        this.passow = password;
+    }
+
+    public Admin(){}
 }
