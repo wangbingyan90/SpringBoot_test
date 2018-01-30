@@ -30,13 +30,13 @@ function loginSubmit(){
             success: function (data) {///去更新cookies
                 if (data!=null) {
                     tip.html('登陆成功')
-                    window.location.href = "/admin/article/list";
+                    window.location.href = "/home.html";
                 }else{
                     tip.html('账号或者密码错误')
                 }
             },
             error: function () {
-                    tip.html('账号或者密码错误');
+                    tip.html('账号或者-----密码错误');
             },
             complete:function(){
                 b.removeAttr('disabled');

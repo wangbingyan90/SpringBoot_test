@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * 登陆控制层
  */
-@Controller
+@RestController
 @EnableAutoConfiguration
 public class LoginController {
     @Autowired
@@ -22,27 +22,15 @@ public class LoginController {
 
 
     @RequestMapping(value = "/login/auth",method = RequestMethod.POST)
-    public String loginAuth(Admin user, HttpSession session,ModelMap map){
+    public Admin loginAuth(Admin user, HttpSession session){
         Admin use = dao.findByNameAndAndPassow(user.getName(),user.getPassow());
         if (use==null)
             return null;
         session.setAttribute("user",use);
-        System.out.println("asdasda");
-        map.addAttribute("host", "http://blog.didispace.com");
-        return "index";
+        System.out.println(use.getName()+"--------------"+use.getPassow());
+        return use;
     }
 
-    @RequestMapping(value = "/save")
-    String save() {
-        Admin use = new Admin("1","1");
-        dao.save(use);
-        return "Hello World!";
-    }
 
-    @RequestMapping("/")
-    public String index(ModelMap map) {
-        map.addAttribute("host", "http://blog.didispace.com");
-        return "index";
-    }
 
 }
