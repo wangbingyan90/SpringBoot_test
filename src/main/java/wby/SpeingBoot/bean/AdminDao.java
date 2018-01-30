@@ -1,4 +1,4 @@
-package wby.SpeingBoot.bean.dao;
+package wby.SpeingBoot.bean;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import wby.SpeingBoot.bean.Admin;
